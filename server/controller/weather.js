@@ -1,10 +1,12 @@
 import Validate from "../util/Validator";
-import dbc from '../config/DBConnector';
+import db from '../config/DBConnector';
 
 class Weather {
     async store(req, res) {
+        console.log(req.body)
         const { error } = Validate.weatherInfo(req.body);
         if (error) {
+            console.log(JSON.stringify(error));
             return res.send({
                 status: 400,
                 error: error.details[0].message
