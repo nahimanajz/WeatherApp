@@ -1,13 +1,13 @@
-import joi from "joi";
+const Joi = require('joi')
 class Validate {
     weatherInfo(data) {
-        const schema = {
-            region: joi.unique().required().string(),
-            degrees: joi.required().integer().max(30),
-            measure: joi.required().string().optional(),
-
-        }
-        return joi.validate(data, schema);
+        const validator = require('express-joi-validation').createValidator({})
+        const schema = Joi.object({
+            region: Joi.string().required(),
+            degrees: Joi.number().max(30),
+            measure: Joi.string().optional()
+        })
+        return validator.body(schema);
     }
 }
 export default new Validate();
