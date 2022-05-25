@@ -38,5 +38,10 @@ class Weather {
       }
     
   }
+  async all(req, res) {
+      const weathers = await WeatherModal.find({})
+    return weathers? res.status(200).send({ weathers }) : res.status(404).send({message: ' No Entry'})
+  
+}
 }
 export default new Weather();
