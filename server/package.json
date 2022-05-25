@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --require babel-core/register --require babel-polyfill ./index.js",
+    "start": "nodemon --es-module-specifier-resolution=node --require babel-core/register --require babel-polyfill ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
