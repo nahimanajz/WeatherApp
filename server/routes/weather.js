@@ -4,6 +4,7 @@ const routes = express.Router();
 routes.post('/store', Weather.store)
 routes.get('/:region', Weather.getOne)
 routes.put('/:id', Weather.update)
+routes.delete('/:id', Weather.delete)
 routes.get('/', Weather.all)
 
 routes.get('/test', (req, res)=> res.send({message: 'route works '}))
