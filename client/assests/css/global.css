@@ -1,6 +1,25 @@
 .text-center {text-align: center;}
-.mb-30 {margin-bottom: 20px}
+.mb-30 {margin-bottom: 30px}
+.mt-30 {margin-bottom: 30px}
+.pd-20 {padding: 20px}
 .title { font-weight: bold; font-size: 32px;}
 .dark-text { color: var(--primary-color);}
 .yellow { color: var(--secondary-color);}
 *:root { --primary-color: #333; --secondary-color: #F8C308; --color-white: #fff}
+
+/* grid */
+.grid { 
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    margin: 0;
+    background-color: #eee;
+    height: 100vh;
+    padding: 64px;
+}
+.child { 
+    height: 270px;
+    width: auto;
+    border: .2px solid var(--secondary-color);
+   padding: 0;
+}
