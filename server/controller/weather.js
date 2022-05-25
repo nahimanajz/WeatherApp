@@ -38,6 +38,20 @@ class Weather {
       }
     
   }
+  async delete(req, res) {
+    try {
+      const updateWeather = await WeatherModal.findOneAndDelete({ _id: req.params.id });
+        if (updateWeather) {
+          return res.status(200).send({ message: "Weather info is deleted"});
+        }
+        return res.status(404).send({ message: "Provided region is not found" });
+    } catch (error) {
+        console.log(error);
+      return res.status(500).send({ message: "Error deleting weather" });
+        
+    }
+  
+}
   async all(req, res) {
       const weathers = await WeatherModal.find({})
     return weathers? res.status(200).send({ weathers }) : res.status(404).send({message: ' No Entry'})
