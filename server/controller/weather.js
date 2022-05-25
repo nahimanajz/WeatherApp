@@ -11,7 +11,12 @@ class Weather {
                 message:'new response is saved',
                 data: resp
             })
-        }).catch(error=> res.send(error))
+        }).catch(error => res.send(error))
+
+    }
+    async getOne(req, res) {
+        const weather = await WeatherModal.findOne({region: req.params.region})
+        return weather? res.status(200).send({weather}) : res.status(404).send({message: 'City not found'})
 
     }
 }
