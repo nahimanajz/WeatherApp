@@ -1,0 +1,6 @@
+.text-center {text-align: center;}
+.mb-30 {margin-bottom: 20px}
+.title { font-weight: bold; font-size: 32px;}
+.dark-text { color: var(--primary-color);}
+.yellow { color: var(--secondary-color);}
+*:root { --primary-color: #333; --secondary-color: #F8C308; --color-white: #fff}

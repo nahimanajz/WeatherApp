@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assests/css/add.css" />
+    <link rel="stylesheet" href="../assests/css/global.css" />
+</head>
+<body>
+    <main>
+        <div class="flex item-center"> <!-- affects flex container--->
+            <div class="flex-column">
+                <div class="title text-center mb-30 dark-text"> Weathers </div>
+                <div class="container">
+                <form>
+                    <div class="flex flex-column">
+                        <label  for="region" class="mb-30">Region</label>
+                        <input type="text" name="region" id="region">
+                    </div>
+                    <div class="flex flex-column">
+                        <label  for="degrees" class="mb-30">Degrees</label>
+                        <input type="text" name="degrees">
+                    </div>                   
+                    <div class="flex">
+                        <label  for="measure" class="mb-30">Measures: </label>  <br />                     
+                        <input type="radio" name="measure"> Celcius
+                        <input type="radio" name="measure"> Fahrenheit
+                    </div>
+                    <button type="submit"> Save </button>
+                </form>
+                </div>
+            </div>
+           
+        </div>
+
+    </main>
+</body>
+</html>
