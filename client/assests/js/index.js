@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
  console.log('content loaded successfully');
  getWeathers(index_url)
+
 })
 const newTag=(tagName)=> document.createElement(tagName);
 const getTag=(parentElementClass,childTag)=> document.getElementsByClassName(parentElementClass)[0].appendChild(childTag)
@@ -58,15 +59,41 @@ const populateToDiv = (weathers) => {
 
 const handleDelete = (id) => {
     console.log(id)
-    fetch(`${index_url}id`, {
+    fetch(`${index_url}${id}`, {
         method: 'DELETE',
       })
-      .then(res => res.text()) // or res.json()
+      .then(res => {
+          localStorage.removeItem('')
+        return res.text()
+      }) // or res.json()
       .then(res => console.log(res))
       //TODO: Add functionality to display alert
  }
-const saveToUpdate =(weather) => {
+const saveToUpdate =(weather) => { // save temporary
  console.log(weather)
  localStorage.setItem('weather', weather)
 }
+
+const actualUpdate = () => {
+//TODO: FETCH DATA FROM LOCAL STORAGE AND GET ID
+// THEN SAVE WITH UDPATED RECORDS TO API
+}
+
+const onSubmit = (e) => {
+
+   const myform = document.getElementById("myform")
+   myform.addEventListener("submit", (e) => {
+    e.preventDefault()
+    const data = new FormData(this)
+    console.log('submitting')
+   })
+
+ /*
+    fetch(`${url}store`, {
+        method: 'POST',
+        body: formData
+    }).then(response => response.json())
+ */
+}
+
 

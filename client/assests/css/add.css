@@ -25,11 +25,11 @@ main {
 }
 form { display: flex;
 justify-content: space-evenly; flex-direction: column; height: 100%;}
-input, button {
+input,select, button {
     height: 2.5rem;
 
 }
-input {  
+input, select {  
     outline:none;
     border:0;
     border-bottom: 2px solid var(--secondary-color);
