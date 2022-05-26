@@ -18,12 +18,12 @@ var btnSubmit = document.querySelector('#submit');
         return fetch(url, {method: 'PUT', headers, body: JSON.stringify(data)}).then(res => res.json()).then(res=> {
   
             localStorage.clear()
-            window.location.href = "weathers.html";
+            window.location.href = "index.html";
         })
      }
      const url = 'https://blooming-inlet-03785.herokuapp.com/api/v1/regions/store'
      return fetch(url, {method: 'POST', headers, body: JSON.stringify(data)}).then(res=> res.json()).then(res =>{
-        window.location.href = "weathers.html";
+        window.location.href = "index.html";
         return console.log(res)
      })
  })
