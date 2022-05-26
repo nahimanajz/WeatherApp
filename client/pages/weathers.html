@@ -8,40 +8,14 @@
     <link rel="stylesheet" href="../assests/css/add.css" />
     <link rel="stylesheet" href="../assests/css/global.css" />
     <script src="../assests/js/index.js"> </script>
+    <script src="../assests/js/AddOrEdit.js"></script>
+ 
 </head>
 <body>
-    <main> <a href="./AddOrEdit.html"> Back </span> </a>
+    <main> <a href="./AddOrEdit.html"> <span> <i class="fa fa-times" aria-hidden="true"></i>  </span> </a>
         <div class="title text-center mb-30 dark-text"> Weathers </div>
        <div class="grid">
-           <div class="child mt-30">
-               <div class="flex-row-btn">
-                   <span>Edit 🥳</span>
-                   <span> Delete </span>
-               </div>
-            <h1 id="title"> Congratulation 🥳 </h1>
-            <p class="conf-text">
-                Thank your for your interest in the developer's program. your form ha being received and it's being
-                processed, you should receive a confirmation email shortly
-            </p>
-            <button id="btn-continue"> Continue</button>
-           </div>
-
-           <div class="child">
-            <div class="flex flex-row-btn">
-                <span>Edit </span>
-                <span> <i class="fa-solid fa-xmark"></i> X </span>
-            </div>
-            <div class="pd-20">
-                <h1 id="title"> {region} 🥳 </h1>
-                <p class="conf-text" contenteditable="true">
-                    {74}<sup>0</sup>C<br />
-                    {updatedAt}
-                </p>
-                <button id="btn-continue"> Continue</button>
-            </div>
-            
-           </div>
-        
+        <div id="loader"> Loading please wait...</div>
        </div>
         
     </main>

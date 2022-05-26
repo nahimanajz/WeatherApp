@@ -11,24 +11,28 @@ const getTag=(parentElementClass,childTag)=> document.getElementsByClassName(par
 
 const getWeathers = async (url) => {
  const  weathers = await fetch(url).then(response => response.json()).then(response => response.weathers)
+ if(weathers.length) {
+    document.getElementById("loader").style.display ="none"
+ }
  populateToDiv(weathers)
 }
 
 const populateToDiv = (weathers) => {
    const weathersList = document.querySelector('.grid')
+
     weathers.map(({_id, region, degrees, measure, updatedAt}, index) => {
-        let deleteBtn = newTag('span');
-        deleteBtn.innerText = 'X'
-        deleteBtn.addEventListener('click', (e) => {
-            alert(_id)
-            
-        })
+
         let child = newTag("div")       
         let flex = newTag("div")  
         let div2 = newTag("div")     
         let span1 = newTag("span")
-        span1.innerText = 'Edit'
-        span1.addEventListener('click', () => localStorage.setItem('weather', JSON.stringify(weathers[index])))  
+        let img = newTag("img")
+        img.src = "https://t3.ftcdn.net/jpg/03/73/50/00/240_F_373500029_TSJ1vErHtB2nUtHoAtaFAwe47fqSJbEd.jpg"
+        span1.appendChild(img)
+        span1.addEventListener('click', () => {
+            localStorage.setItem('weather', JSON.stringify(weathers[index]))
+            window.location.href = "AddOrEdit.html";
+        })  
 
         let span2 = newTag("span")
         child.classList.add("child")
@@ -45,7 +49,7 @@ const populateToDiv = (weathers) => {
         <h1 id="title"> ${region} </h1>
         <p class="conf-text" contenteditable="true">
             Degrees: ${degrees}<sup>0</sup>${measure === 'celcius'? `C`:`F`}<br />
-            Last updated on: ${updatedAt}
+            Last updated on: ${new Date(updatedAt).toLocaleDateString()}
         </p>
     </div>`
 
@@ -63,7 +67,7 @@ const handleDelete = (id) => {
         method: 'DELETE',
       })
       .then(res => {
-          localStorage.removeItem('')
+          localStorage.clear('')
         return res.text()
       }) // or res.json()
       .then(res => console.log(res))
@@ -73,27 +77,4 @@ const saveToUpdate =(weather) => { // save temporary
  console.log(weather)
  localStorage.setItem('weather', weather)
 }
-
-const actualUpdate = () => {
-//TODO: FETCH DATA FROM LOCAL STORAGE AND GET ID
-// THEN SAVE WITH UDPATED RECORDS TO API
-}
-
-const onSubmit = (e) => {
-
-   const myform = document.getElementById("myform")
-   myform.addEventListener("submit", (e) => {
-    e.preventDefault()
-    const data = new FormData(this)
-    console.log('submitting')
-   })
-
- /*
-    fetch(`${url}store`, {
-        method: 'POST',
-        body: formData
-    }).then(response => response.json())
- */
-}
-
 

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weathers</title>
     <link rel="stylesheet" href="../assests/css/add.css" />
     <link rel="stylesheet" href="../assests/css/global.css" />
+    <script src="../assests/js/AddOrEdit.js"></script>
 </head>
 <body>
     <main>
@@ -17,11 +18,11 @@
                     <form>
                     <div class="flex flex-column">
                         <label  for="region" class="mb-30">Region</label>
-                        <input type="text" name="region" id="region" value="" />
+                        <input type="text" name="region" id="region" value="" required/>
                     </div>
                     <div class="flex flex-column">
                         <label  for="degrees" class="mb-30">Degrees</label>
-                        <input type="text" name="degrees" id="degree" value="m" />
+                        <input type="number" name="degrees" id="degree" value="m" required/>
                     </div>                  
                    
                     <div>
@@ -42,21 +43,7 @@
 </body>
 </html>
 <script>
- var form = document.querySelector('#submit');
- const measure = document.querySelector('#measure').value
- const region = document.querySelector('#region')
- const degrees = document.querySelector("#degree");
-
- form.addEventListener('click', (e) => {
-     e.preventDefault();
-     const data = {measure, region: region.value, degrees: degrees.value}
-     console.log(data)
-     const headers = {
-        'Content-Type': 'application/json'
-     }
-     const url = 'https://blooming-inlet-03785.herokuapp.com/api/v1/regions/store'
-     fetch(url, {method: 'POST', headers, body: JSON.stringify(data)}).then(res=> res.json()).then(res=> console.log(res))
- })
+ 
 
  
 </script>
