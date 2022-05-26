@@ -17,11 +17,14 @@ API base URL: `https://blooming-inlet-03785.herokuapp.com`
 
 ## Installation guide
 Later on cloning this repository you can follow the following instruction to go through whole full stack application
-**Prerequisite**
+## Prerequisite
 Having nodejs installed into your computer and postman incase you want to test APIs
-** Steps**
+## Steps
 In your terminal perform the following commands
+`
 cd server/ && npm install && npm start
-cd ../client/
-Change this line ```const index_url = `https://blooming-inlet-03785.herokuapp.com/api/v1/regions/``` to const index_url = `https://localhost:2000/api/v1/regions/`
+cd ../client/ 
+`
+- Change this line ``` const index_url =https://blooming-inlet-03785.herokuapp.com/api/v1/regions/ ``` 
+- To const index_url = `https://localhost:2000/api/v1/regions/`
  Open __index.html__ you would be able to see list of all registered `weather` info and navigate the UI
